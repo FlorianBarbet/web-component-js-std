@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to MyRPG !</title>
+    <link rel="stylesheet" href="./main.css"/>
+</head>
+<body>
+    <div class="control-pad" style="display: none;">
+        <div>
+            <button onclick="Application.load(nodes)" title="shortcut is 'Ctrl + L'">Charger</button>
+            <button onclick="Application.save(nodes)" title="shortcut is 'Ctrl + S'">Save</button>
+        </div>
+        <div>
+            <button onclick="exitControlPad()" class="red-button">Exit</button>
+        </div>
+    </div>
+    <div>
+        <button onclick="openControlPad()">Control Pad</button>
+    </div>
+    <script type="application/javascript" src="main.js"></script>
+</body>
+</html>

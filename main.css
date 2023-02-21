@@ -1,0 +1,180 @@
+h1 {
+    margin-block-start: 0;
+}
+
+body {
+    margin: 0;
+    font-family: monospace;
+    font-weight: bold;
+    background: #344955
+}
+
+body > div:nth-child(2) > button {
+    border-radius: 0 0 15px 15px;
+    font-size: 20px;
+}
+
+body > div:nth-child(2) {
+    margin-bottom: 3%;
+    position: sticky;
+    top: 0;
+}
+
+button {
+    width: 100%;
+    background: #f9aa33;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+button:active {
+    opacity: 0.2;
+}
+
+/*textarea CSS from https://developer.mozilla.org/en-US/docs/web/html/element/textarea*/
+textarea {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/*textarea CSS from https://developer.mozilla.org/en-US/docs/web/html/element/textarea*/
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+.container {
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 15px;
+    background: #fff;
+    padding: 20px 10px;
+}
+
+.control-pad {
+    position: fixed;
+    background: rgba(1, 1, 1, 1);
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1px;
+    align-items: baseline;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.control-pad > div:first-child {
+    width: 35%;
+    margin: 2px;
+    padding: 10px;
+}
+
+.control-pad > div:nth-child(2) {
+    width: 10%;
+}
+
+.control-pad > div:first-child > button {
+    margin-bottom: 2px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.red-button {
+    background: #f4511e;
+}
+
+/*Framework classes*/
+.stats, .health {
+    display: flex;
+    justify-content: space-between;
+    width: 67%;
+    margin: 10px auto;
+    padding: 8px;
+    border: 2px dashed;
+}
+
+.health {
+    color: #fd5523;
+}
+
+.character > div[input-id] {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: 8px auto;
+}
+
+.character > div[input-id] > span,
+.character > div[input-id] > input{
+    flex: 1;
+}
+
+.area-generation-effect,
+.area-generation-skill {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    flex-basis: 100%;
+}
+
+.area-generation-effect > div,
+.area-generation-skill > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex: 1;
+    flex-basis: 50%;
+    margin-top: 10px;
+}
+
+.area-generation-effect > div > div,
+.area-generation-skill > div > div {
+    display: flex;
+    flex-basis: 80%;
+}
+
+.area-generation-effect > div > div > label,
+.area-generation-effect > div > div > textarea,
+.area-generation-skill > div > div > span,
+.area-generation-skill > div > div > input {
+    flex: 1;
+}
+
+.skill > input[type=checkbox],
+.stats > input[type=checkbox] {
+    cursor: help;
+}
+
+.skill-generator, .effect-generator {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.effect-generator > input:first-child,
+.effect-generator > button,
+.skill-generator > input:first-child,
+.skill-generator > button {
+    flex-basis: 20%;
+}
+
+.bag h1,
+.stuff h1,
+.class_spell h1,
+.spells h1 {
+    margin-top: 10px;
+}
+
+div[input-id=money] {
+    margin: 10px auto;
+}
