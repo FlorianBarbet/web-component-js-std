@@ -1,11 +1,10 @@
 console.log('common loading...');
-// this file should be independent of others !
 
 if (!String.prototype.format)
     /*Cannot be a Lambda*/
     String.prototype.format = function (toFormat) {
-        /*That's not optimize, should use sed or something like that to make it better*/
-        let str = this;
+        /*That's not optimized, should use sed or something like that to make it better*/
+        let str = structuredClone(this);
         Object.entries(toFormat).forEach(([k,v]) => {
             str = str.replaceAll(`{${k}}`, v);
         });

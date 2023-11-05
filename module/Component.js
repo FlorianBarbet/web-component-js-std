@@ -42,7 +42,6 @@ Component.parse = ( partialTagName, _methods = {} ) => {
 
         observe() {
             return Object.values(this.attributes)
-                .filter(v => v.follow ?? true)
                 .map(v => v.identifier);
         }
     };

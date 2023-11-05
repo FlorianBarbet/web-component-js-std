@@ -5,7 +5,6 @@ h1 {
 body {
     margin: 0;
     font-family: monospace;
-    font-weight: bold;
     background: #344955
 }
 
@@ -92,89 +91,55 @@ textarea {
 }
 
 /*Framework classes*/
-.stats, .health {
+.card {
+
+    border-radius: 10px;
+    border: 1px solid #aaa;
+
+}
+
+.card-container {
+    flex: 45%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+
+.card > div > h3 {
+    border: 1px solid #8c1717;
+    color: #851616;
+}
+
+.card > div {
+    padding: 5%;
+}
+
+.collectible {
     display: flex;
-    justify-content: space-between;
-    width: 67%;
-    margin: 10px auto;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+
+bold {
+    font-weight: bold;
+}
+
+table {
+    border-spacing: 0px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+    background-color: transparent; /* Change the background-color of table here */
+    text-align: left; /* Change the text-alignment of table here */
+}
+
+th {
+    font-weight: bold;
+    border: 1px solid #cccccc; /* Change the border-color of heading here */
     padding: 8px;
-    border: 2px dashed;
 }
 
-.health {
-    color: #fd5523;
-}
-
-.character > div[input-id] {
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    margin: 8px auto;
-}
-
-.character > div[input-id] > span,
-.character > div[input-id] > input{
-    flex: 1;
-}
-
-.area-generation-effect,
-.area-generation-skill {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
-    flex-basis: 100%;
-}
-
-.area-generation-effect > div,
-.area-generation-skill > div {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    flex: 1;
-    flex-basis: 50%;
-    margin-top: 10px;
-}
-
-.area-generation-effect > div > div,
-.area-generation-skill > div > div {
-    display: flex;
-    flex-basis: 80%;
-}
-
-.area-generation-effect > div > div > label,
-.area-generation-effect > div > div > textarea,
-.area-generation-skill > div > div > span,
-.area-generation-skill > div > div > input {
-    flex: 1;
-}
-
-.skill > input[type=checkbox],
-.stats > input[type=checkbox] {
-    cursor: help;
-}
-
-.skill-generator, .effect-generator {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.effect-generator > input:first-child,
-.effect-generator > button,
-.skill-generator > input:first-child,
-.skill-generator > button {
-    flex-basis: 20%;
-}
-
-.bag h1,
-.stuff h1,
-.class_spell h1,
-.spells h1 {
-    margin-top: 10px;
-}
-
-div[input-id=money] {
-    margin: 10px auto;
+td {
+    border: 1px solid #cccccc; /* Change the border-color of cells here */
+    padding: 8px;
 }

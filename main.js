@@ -31,8 +31,7 @@ const modules = [
     "module/common.js",
     "module/Component.js",
     "module/Model.js",
-    "module/Service.js",
-    "module/stats.js"
+    "module/Service.js"
 ];
 
 (function () {
@@ -52,48 +51,21 @@ const modules = [
 
 function Application (){ /* static prototype but can be extended */ }
 Application.run = function () {
-    const stored_data = sessionStorage.getItem('content');
-    if (stored_data !== null) {
-        for (const [key, value] of Object.entries(JSON.parse(stored_data))) {
-            Data[key] = value;
-        }
-    }
+    const card_loader = Tags['card_loader'].cloneNode();
+    app_container.appendChild(card_loader);
 
-    const character = Tags['character'].cloneNode();
-    app_container.appendChild(character);
+    const search_bar = Tags['search_bar'].cloneNode();
+    app_container.appendChild(search_bar);
 
-    const characteristics = Tags['characteristics'].cloneNode();
-    app_container.appendChild(characteristics);
+    const catalogue = Tags['catalogue'].cloneNode();
+    app_container.appendChild(catalogue);
 
-    const skills = Tags['skills'].cloneNode();
-    app_container.appendChild(skills);
-
-    const spells = Tags['spells'].cloneNode();
-    app_container.appendChild(spells);
-
-    const class_spell = Tags['class_spell'].cloneNode();
-    app_container.appendChild(class_spell);
-
-    const stuff = Tags['stuff'].cloneNode();
-    app_container.appendChild(stuff);
-
-    const bag = Tags['bag'].cloneNode();
-    app_container.appendChild(bag);
     // theses should be available when the app is completly build !
-    Application.load = function (){
-        const stored_data = sessionStorage.getItem('content');
-        if (stored_data !== null) {
-            for (const [key, value] of Object.entries(JSON.parse(stored_data))) {
-                Data[key] = value;
-            }
-        }
-        Object.values(nodes).forEach(node => node.load());
+    Application.load = function (nodes){
+        Object.values(nodes).forEach(node => node?.load?.());
     }
 
     Application.save = function () {
-        Object.values(nodes).forEach(node => node.save());
-        sessionStorage.setItem('content', JSON.stringify(Data));
-        console.log("Data saved !");
     }
 
     document.addEventListener('keydown', (evt) => {
@@ -106,18 +78,13 @@ Application.run = function () {
 
         if (evt.ctrlKey && evt.key === 'l'){
             evt.preventDefault();
-            Application.load();
+            Application.load({ catalogue });
         }
 
-    })
+    });
+
     return {
-        character,
-        characteristics,
-        skills,
-        spells,
-        class_spell,
-        stuff,
-        bag
+        catalogue
     }
 }
 
